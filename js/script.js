@@ -117,3 +117,10 @@ if (isTouch) {
     activePreview = null;
   });
 }
+
+// Add landscape class to landscape images automatically
+document.querySelectorAll(".preview-image").forEach((img) => {
+  if (img.naturalWidth > img.naturalHeight) {
+    img.classList.add("landscape");
+  }
+});

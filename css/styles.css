@@ -5,6 +5,12 @@
   font-style: normal;
 }
 
+html,
+body {
+  overflow: hidden;
+  touch-action: none; /* stops iOS rubber-banding */
+}
+
 html {
   height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +20,8 @@ html {
 body {
   background-color: #f2eee9;
   color: #1d1b10;
-  min-height: 100vh;
+  height: 100svh; /* ensures no scroll on mobile */
+  overflow: hidden; /* prevents any accidental scroll */
   font-family: PressuraMono, monospace;
   font-size: 0.875rem;
   line-height: 150%;
@@ -58,6 +65,11 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.preview-image.landscape {
+  width: 90vw;
+  max-height: 60vh;
 }
 
 #bench-video::-webkit-media-controls-enclosure {
