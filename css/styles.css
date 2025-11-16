@@ -52,7 +52,6 @@ a:hover {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
-
 #bench-video,
 .preview-image {
   position: fixed;
@@ -60,31 +59,30 @@ a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
-  width: min(90vw, 40vh); /* works well on iPhone 13 mini and up */
-  max-height: 70vh;
+
+  /* DO NOT set width here — ensures no stretching */
+  max-width: 90vw;
+  max-height: 80vh;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
+/* Additional refinement for landscape ONLY */
 .preview-image.landscape {
-  width: 90vw;
-  max-height: 60vh;
+  max-width: 95vw; /* allows more horizontal space */
+  max-height: 65vh; /* keeps it visually balanced */
 }
 
 #bench-video::-webkit-media-controls-enclosure {
   display: none !important;
 }
 
-/* Mobile refinements */
 @media (max-width: 600px) {
-  body {
-    padding: 1rem;
-  }
-
   #bench-video,
   .preview-image {
-    width: 90vw;
-    max-height: 60vh;
+    max-width: 95vw;
+    max-height: 70vh;
   }
 }
