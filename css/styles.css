@@ -60,6 +60,10 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+#bench-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
 /* Mobile refinements */
 @media (max-width: 600px) {
   body {
