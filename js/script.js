@@ -9,6 +9,7 @@ function showPreview(el, type) {
   el.style.opacity = "1";
 
   if (type === "video") {
+    el.load();
     el.play();
   }
 }
