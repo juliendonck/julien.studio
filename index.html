@@ -51,7 +51,6 @@
     </footer>
     <video
       id="bench-video"
-      src="./images/bench.webm"
       muted
       autoplay
       loop
@@ -59,7 +58,10 @@
       playsinline
       webkit-playsinline
       class="bench-video"
-    ></video>
+    >
+      <source src="./images/bench.webm" type="video/webm" />
+      <source src="./images/bench.mp4" type="video/mp4" />
+    </video>
     <img
       id="library"
       class="preview-image"
